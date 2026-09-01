@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Portal</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <header class="bg-blue-600 p-5 text-4xl text-white">Discussion Portal</header>
+    <div class="flex w-full">
+        <div id="leftPanel" class="w-[40%] mr-5">
+            <div class="flex flex-col">
+                <div>
+                    <button id="newQuestion" class="bg-blue-400 text-white text-xl rounded-xl p-2 m-2 shadow-2xl mb-10">New Question Form</button>
+                    <input type="text" id="search" placeholder="search questions..." oninput="searchQuestion()" class="border-2 border-gray-200 p-1 mb-10">
+                </div>
+                <div id="boxEmpty" class="bg-blue-200 h-130 overflow-y-scroll"></div>
+            </div>
+        </div>
+
+        <div id="rightPanel" class="w-[60%] m-5">
+            <div id="welcome" class="text-5xl font-bold italic mt-8 mb-2">Welcome to Discussion Portal!...</div>
+
+            <div id="instruction">Enter a subject and a question to get started.</div>
+
+            <div id="questionForm">
+                <input type="text" id="subject" placeholder="Subject" class="w-80 p-2 h-10 m-2 border-gray-200 border-2">
+                <textarea id="question" rows="5" placeholder="Question" class="w-[90%] m-2 p-2 border-gray-200 border-2"></textarea>
+                <br>
+                <input type="submit" id="submit" value="Submit" class="bg-blue-400 text-white text-xl rounded-xl p-2 m-2">
+            </div>
+
+            <div id="details" class="hidden border-gray-300 border-3 p-3">
+                <h1 id="detailSubject" class="text-3xl font-bold mb-2"></h1>
+                <p id="detailQuestion" class="text-xl mb-2"></p>
+                <h2 class="text-2xl font-bold">Add Response</h2>
+                <input type="text" id="responseName" placeholder="Name" class="border-2 border-gray-300 p-2 m-2 w-80">
+                <textarea id="responseComment" placeholder="Comment" rows="4" class="border-2 border-gray-300 p-2 m-2 w-[90%]"></textarea>
+                <br>
+                <button id="submitResponse" class="bg-blue-400 text-white text-xl rounded-xl p-2 m-2">Submit Response</button>
+                <h2 class="text-2xl font-bold mt-2">Previous Answers</h2>
+                <div id="responses" class="h-30 overflow-y-auto"></div>
+                <button id="resolve" class="bg-red-500 text-white text-xl rounded-xl p-2 mt-2">Resolve</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
